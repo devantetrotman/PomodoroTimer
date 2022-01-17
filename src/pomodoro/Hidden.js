@@ -14,13 +14,13 @@ function Hidden({isTimerRunning,
         <div>
           <div className="row mb-2">
             <div className="col">
-              {!isTimerRunning === false ?(
+              {session.label === "Focusing" ?(
                 /* TODO: Update message below to include current session (Focusing or On Break) total duration */
               <h2 data-testid="session-title">
                   {session.label} for {minutesToDuration(focusDuration)} minutes
               </h2>) 
               : (<h2 data-testid="session-title">
-                {session.label} for {minutesToDuration(focusDuration)} minutes
+                {session.label} for {minutesToDuration(breakDuration)} minutes
               </h2>)
               }
               {/* TODO: Update message below correctly format the time remaining in the current session */}
