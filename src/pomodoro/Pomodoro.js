@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import useInterval from "../utils/useInterval";
 import IncreaseBtns from "./IncreaseBtns";
 import Hidden from "./Hidden";
+import PlayPauseBtns from "./PlayPauseBtns";
 
 // These functions are defined outside of the component to insure they do not have access to state
 // and are, therefore more likely to be pure.
@@ -76,16 +77,31 @@ function Pomodoro() {
 
   return (
     <div className="pomodoro">
-      <IncreaseBtns isTimerRunning={isTimerRunning} 
-      session={session} 
-      focusDuration={focusDuration} 
-      breakDuration={breakDuration} 
-      setSession={setSession}
-      setIsTimerRunning={setIsTimerRunning}
-      setFocusDuration={setFocusDuration}
-      setBreakDuration={setBreakDuration}
-      setInitialFocusDuration={setInitialFocusDuration}  />
-      <Hidden isTimerRunning={isTimerRunning} session={session} focusDuration={focusDuration} initialFocusDuration={initialFocusDuration} />
+      <IncreaseBtns 
+        isTimerRunning={isTimerRunning} 
+        session={session} 
+        focusDuration={focusDuration} 
+        breakDuration={breakDuration} 
+        setSession={setSession}
+        setIsTimerRunning={setIsTimerRunning}
+        setFocusDuration={setFocusDuration}
+        setBreakDuration={setBreakDuration}
+        setInitialFocusDuration={setInitialFocusDuration}  />
+      <PlayPauseBtns 
+        isTimerRunning={isTimerRunning} 
+        session={session} 
+        focusDuration={focusDuration} 
+        breakDuration={breakDuration} 
+        setSession={setSession}
+        setIsTimerRunning={setIsTimerRunning}
+        setFocusDuration={setFocusDuration}
+        setBreakDuration={setBreakDuration}
+        setInitialFocusDuration={setInitialFocusDuration}  />
+      <Hidden 
+        isTimerRunning={isTimerRunning} 
+        session={session} 
+        focusDuration={focusDuration} 
+        initialFocusDuration={initialFocusDuration} />
     </div>
   );
 }
