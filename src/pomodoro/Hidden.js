@@ -20,7 +20,7 @@ function Hidden({isTimerRunning,
                   {session.label} for {minutesToDuration(focusDuration)} minutes
               </h2>) 
               : (<h2 data-testid="session-title">
-                {session.label} for {minutesToDuration(breakDuration)} {breakDuration === 1 ? "minute" : "minutes"}
+                {session.label} for {minutesToDuration(breakDuration)} minutes
               </h2>)
               }
               {/* TODO: Update message below correctly format the time remaining in the current session */}
