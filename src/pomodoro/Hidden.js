@@ -36,6 +36,7 @@ function Hidden({isTimerRunning,
           <div className="row mb-2">
             <div className="col">
               <div className="progress" style={{ height: "20px" }}>
+                {session.label === "Focusing" ?
                 <div
                   className="progress-bar"
                   role="progressbar"
@@ -43,7 +44,14 @@ function Hidden({isTimerRunning,
                   aria-valuemax="100"
                   aria-valuenow={(1 - (session.timeRemaining/(initialFocusDuration * 60))) * 100} // TODO: Increase aria-valuenow as elapsed time increases
                   style={{ width: `${(1 - (session.timeRemaining/(initialFocusDuration * 60))) * 100}%` }} // TODO: Increase width % as elapsed time increases
-                />
+                /> : <div
+                  className="progress-bar"
+                  role="progressbar"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuenow={(1 - (session.timeRemaining/(breakDuration * 60))) * 100} // TODO: Increase aria-valuenow as elapsed time increases
+                  style={{ width: `${(1 - (session.timeRemaining/(breakDuration * 60))) * 100}%` }} // TODO: Increase width % as elapsed time increases
+                />}
               </div>
             </div>
           </div>
